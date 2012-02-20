@@ -1,4 +1,4 @@
-require 'rake/rdoctask'
+require 'rdoc/task'
 require 'rake/testtask'
 
 PKG_NAME           = 'acts_as_versioned_association'
