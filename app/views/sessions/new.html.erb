@@ -1,0 +1,14 @@
+<%- @title = "Log In" -%>
+
+<div class="span-16 white_box">
+  <div class="top"></div> 
+  <div class="wrapper">
+    <div class="interior_content">
+      <%= content_tag(:h2, @title) unless params[:popup] %>
+      <div class="popup_form">
+        <%= render :partial => "sessions/new" %>
+      </div>
+    </div>
+  </div>
+  <div class="bottom"></div>
+</div>

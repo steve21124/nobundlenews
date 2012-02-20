@@ -1,0 +1,29 @@
+<%- if facebook_enabled? -%>
+<div class="other_login_option">
+  <div class="question">
+    <strong>Got Facebook?</strong> Log In or Sign Up with your Facebook account. <%= help_icon("facebook", "") %>
+  </div>
+  <div style="padding-top: 5px">
+    <%- popup_param = params[:popup] ? "?popup=true" : "" -%>
+    <%- url_prefix = @invitation ? "/partners/#{@partner.to_param}/#{@invitation.to_param}" : "" -%>
+    <%= fb_login_button("fbc_activate('#{url_prefix}', '#{popup_param}')") %>
+  </div>
+</div>
+<%- end -%>
+
+<div class="other_login_option">
+  <div class="question">
+    Don't have a <%=app_name%> account yet?<%= help_icon("join", "") %>
+  </div>
+  <%= link_to "Sign Up", new_member_path(params.slice(:popup)), :style => "font-size:125%" %>
+</div>
+
+<br/>
+
+<h3>Or log in with your <%=app_name%> account here:</h3>
+<br/>
+
+<%- args = params[:popup] ? {:popup => true} : {} -%>
+<%- form_tag sessions_path(args), :class => 'entry_form' do -%>
+  <%= render :partial => "sessions/log_in" %>
+<%- end -%>
