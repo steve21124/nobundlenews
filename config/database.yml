@@ -4,7 +4,7 @@ development:
   host: 127.0.0.1
   database: socialnews1
   username: root
-  password: 45spider
+  password: 
   socket:  /var/run/mysqld/mysqld.sock
 
 # Warning: The database defined as 'test' will be erased and
